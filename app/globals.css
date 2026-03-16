@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #F4F6FA;
+  --foreground: #1a1a2e;
+  --navy: #1B2E5A;
+  --gold: #C8A84B;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+.font-heading {
+  font-family: var(--font-playfair), serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .accent-gold-line {
+    @apply w-8 h-1 bg-gold rounded;
+  }
+}
