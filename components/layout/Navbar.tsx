@@ -53,7 +53,7 @@ export function Navbar() {
         </Link>
 
         {/* Desktop nav links — centered */}
-        <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-6">
+        <div className="hidden md:flex absolut left1/2 -translate-x1/2 items-center gap-6">
           {navLinks.map(({ href, label }) => {
             const isActive =
               pathname === href || (href !== "/" && pathname.startsWith(href));
@@ -78,14 +78,7 @@ export function Navbar() {
         </div>
 
         {/* JOIN NOW button */}
-        <div className="flex items-center gap-2">
-          <Link
-            href="/contact"
-            className="hidden md:inline-flex items-center justify-center px-4 py-2 rounded-lg bg-gold text-primary font-semibold uppercase text-sm hover:opacity-90"
-          >
-            Join Now
-          </Link>
-
+        <div className="flex md:hidden items-center gap-2">
           {/* Mobile menu button */}
           <button
             type="button"
@@ -146,13 +139,13 @@ export function Navbar() {
               </Link>
             );
           })}
-          <Link
+          {/* <Link
             href="/contact"
             onClick={() => setMobileOpen(false)}
             className="mt-2 py-3 px-4 rounded-lg bg-gold text-primary font-semibold text-center uppercase text-sm min-h-[44px] flex items-center justify-center"
           >
             Join Now
-          </Link>
+          </Link> */}
         </div>
       )}
     </header>
