@@ -6,26 +6,28 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@heroui/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        navy: "#1B2E5A",
-        gold: "#C8A84B",
-        "light-bg": "#F4F6FA",
-        "text-dark": "#1a1a2e",
-        "text-muted": "#6b7280",
+        primary: "var(--color-primary)",
+        gold: "var(--color-gold)",
+        "accent-gold": "var(--color-gold)",
+        "navy-deep": "var(--color-primary)",
+        background: "var(--color-background)",
+        surface: "var(--color-surface)",
+        "text-dark": "var(--color-text-dark)",
+        "text-muted": "var(--color-text-muted)",
       },
       fontFamily: {
-        heading: ["var(--font-playfair)", "serif"],
-        body: ["var(--font-inter)", "sans-serif"],
+        heading: ["var(--font-family-heading)", "serif"],
+        body: ["var(--font-family-body)", "sans-serif"],
       },
     },
   },
   darkMode: "class",
-  plugins: [heroui()],
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  plugins: [heroui()] as any,
 };
 export default config;

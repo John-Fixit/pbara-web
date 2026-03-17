@@ -3,27 +3,75 @@
 @tailwind utilities;
 
 :root {
-  --background: #F4F6FA;
-  --foreground: #1a1a2e;
-  --navy: #1B2E5A;
-  --gold: #C8A84B;
+  --color-primary: #1B2452;
+  --color-gold: #C8A84B;
+  --color-gold-light: #E8C96A;
+  --color-background: #F4F6FA;
+  --color-surface: #ffffff;
+  --color-text-dark: #1a1a2e;
+  --color-text-muted: #6b7280;
+  --font-family-heading: "Iosevka Charon", serif;
+  --font-family-body: "Outfit", sans-serif;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes border-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 1px rgba(200, 168, 75, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 1px rgba(200, 168, 75, 0.5);
+  }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: var(--font-inter), system-ui, sans-serif;
+  color: var(--color-text-dark);
+  background: var(--color-background);
+  font-family: var(--font-family-body);
 }
 
 .font-heading {
-  font-family: var(--font-playfair), serif;
+  font-family: var(--font-family-heading);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-  .accent-gold-line {
-    @apply w-8 h-1 bg-gold rounded;
-  }
+.font-body {
+  font-family: var(--font-family-body);
+}
+
+.accent-gold-line {
+  width: 2rem;
+  height: 0.25rem;
+  background-color: var(--color-gold);
+  border-radius: 0.25rem;
 }

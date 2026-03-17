@@ -1,47 +1,59 @@
 "use client";
 
-import { Chip } from "@heroui/react";
 import type { PastOfficer } from "@/types";
 
 interface PastOfficersTableProps {
   officers: PastOfficer[];
 }
 
-/**
- * Table: Year of Service, Name, Post (gold), Status chip (Completed)
- */
 export function PastOfficersTable({ officers }: PastOfficersTableProps) {
   return (
-    <div className="overflow-x-auto rounded-xl border border-gray-200 bg-white shadow-sm">
-      <table className="w-full text-left" aria-label="Past officers">
-        <thead>
-          <tr className="border-b border-gray-200 bg-light-bg">
-            <th className="px-4 py-3 font-heading font-semibold text-text-dark text-sm uppercase tracking-wider">
+    <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-sm">
+      <table className="min-w-full divide-y divide-slate-200 dark:divide-slate-700" aria-label="Past officers">
+        <thead className="bg-primary/5 dark:bg-primary/10">
+          <tr>
+            <th
+              className="px-6 py-4 text-left text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider"
+              scope="col"
+            >
               Year of Service
             </th>
-            <th className="px-4 py-3 font-heading font-semibold text-text-dark text-sm uppercase tracking-wider">
+            <th
+              className="px-6 py-4 text-left text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider"
+              scope="col"
+            >
               Name
             </th>
-            <th className="px-4 py-3 font-heading font-semibold text-text-dark text-sm uppercase tracking-wider">
+            <th
+              className="px-6 py-4 text-left text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider"
+              scope="col"
+            >
               Post
             </th>
-            <th className="px-4 py-3 font-heading font-semibold text-text-dark text-sm uppercase tracking-wider">
+            <th
+              className="px-6 py-4 text-left text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider"
+              scope="col"
+            >
               Status
             </th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="divide-y divide-slate-200 dark:divide-slate-700 bg-white dark:bg-slate-800">
           {officers.map((o) => (
-            <tr key={o.id} className="border-b border-gray-100 hover:bg-gray-50/50">
-              <td className="px-4 py-3 text-text-muted text-sm">
-                {o.yearStart}–{o.yearEnd}
+            <tr key={o.id} className="hover:bg-primary/5 transition-colors">
+              <td className="px-6 py-4 whitespace-nowrap text-sm font-semibold text-slate-900 dark:text-slate-100">
+                {o.yearStart} — {o.yearEnd}
               </td>
-              <td className="px-4 py-3 font-medium text-text-dark">{o.name}</td>
-              <td className="px-4 py-3 text-gold font-semibold text-sm">{o.post}</td>
-              <td className="px-4 py-3">
-                <Chip size="sm" color="primary" variant="flat">
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">
+                {o.name}
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-primary font-medium">
+                {o.post}
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap text-xs">
+                <span className="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded-full">
                   {o.status}
-                </Chip>
+                </span>
               </td>
             </tr>
           ))}

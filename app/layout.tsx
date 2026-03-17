@@ -1,20 +1,16 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
-const playfair = Playfair_Display({
+const outfit = Outfit({
   subsets: ["latin"],
-  variable: "--font-playfair",
+  variable: "--font-outfit",
   display: "swap",
-});
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
+  weight: "variable",
 });
 
 const baseUrl = "https://pbara.org.ng";
@@ -35,13 +31,28 @@ export const metadata: Metadata = {
   },
   description:
     "Royal Ambassadors of Nigeria — building godly boys into disciplined men of faith and integrity through the Pentecost Baptist Association.",
-  keywords: ["Royal Ambassadors", "PBA", "Pentecost Baptist", "Nigeria", "Christian youth", "RA"],
+  keywords: [
+    "Royal Ambassadors",
+    "PBA",
+    "Pentecost Baptist",
+    "Nigeria",
+    "Christian youth",
+    "RA",
+  ],
   openGraph: {
     title: "PBA Royal Ambassadors | Pentecost Baptist Association",
-    description: "Building godly ambassadors for Christ through discipline, character development, and the Word of God.",
+    description:
+      "Building godly ambassadors for Christ through discipline, character development, and the Word of God.",
     url: baseUrl,
     siteName: "PBA Royal Ambassadors",
-    images: [{ url: "/images/ra-logo.png", width: 512, height: 512, alt: "Royal Ambassadors logo" }],
+    images: [
+      {
+        url: "/images/ra-logo.png",
+        width: 512,
+        height: 512,
+        alt: "Royal Ambassadors logo",
+      },
+    ],
     locale: "en_NG",
     type: "website",
   },
@@ -57,14 +68,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+    <html lang="en" className={outfit.variable}>
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        {/* eslint-disable-next-line @next/next/no-page-custom-font -- Iosevka Charon not in next/font; loaded in root layout for all pages */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Iosevka+Charon:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Outfit:wght@100..900&display=swap"
+          rel="stylesheet"
+        />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-light-bg text-text-dark font-body antialiased">
+      <body className="min-h-screen flex flex-col bg-background text-text-dark font-body antialiased">
         <Providers>
           <AnnouncementBar />
           <Navbar />

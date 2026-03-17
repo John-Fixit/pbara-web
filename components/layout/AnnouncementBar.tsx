@@ -7,7 +7,7 @@ import Link from "next/link";
  */
 export function AnnouncementBar() {
   return (
-    <header className="bg-navy text-white text-xs uppercase tracking-wider py-2">
+    <header className="bg-primary text-white text-xs uppercase tracking-wider py-2">
       <div className="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-between gap-2">
         <span className="text-white/90">
           THE OFFICIAL PORTAL OF RA PENTECOST · EST. 1974

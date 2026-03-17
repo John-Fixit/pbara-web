@@ -1,5 +1,6 @@
 "use client";
 
+import { FiPlay, FiImage, FiDownload, FiSliders } from "react-icons/fi";
 import { Tabs, Tab } from "@heroui/react";
 import Image from "next/image";
 import { DownloadCard } from "@/components/ui/DownloadCard";
@@ -21,12 +22,12 @@ export function MediaGallery() {
   return (
     <section className="py-12" aria-labelledby="media-tabs-heading">
       <Tabs id="media-tabs-heading" aria-label="Media gallery tabs" defaultSelectedKey="photos" className="w-full">
-        <Tab key="videos" title={<span className="flex items-center gap-2"><span aria-hidden>▶</span> Videos</span>}>
+        <Tab key="videos" title={<span className="flex items-center gap-2"><FiPlay size={18} /> Videos</span>}>
           <div className="py-8">
             <p className="text-text-muted mb-6">Video content will be added here.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[1, 2, 3].map((i) => (
-                <div key={i} className="relative aspect-video bg-navy/10 rounded-xl overflow-hidden group">
+                <div key={i} className="relative aspect-video bg-primary/10 rounded-xl overflow-hidden group">
                   <Image
                     src="/images/ra-logo.png"
                     alt="Royal Ambassadors logo — video thumbnail placeholder"
@@ -34,8 +35,8 @@ export function MediaGallery() {
                     className="object-contain p-8"
                   />
                   <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
-                    <span className="w-14 h-14 rounded-full bg-gold flex items-center justify-center text-navy" aria-hidden>
-                      ▶
+                    <span className="w-14 h-14 rounded-full bg-gold flex items-center justify-center text-primary min-w-[44px] min-h-[44px]" aria-hidden>
+                      <FiPlay size={28} />
                     </span>
                   </div>
                 </div>
@@ -43,33 +44,33 @@ export function MediaGallery() {
             </div>
           </div>
         </Tab>
-        <Tab key="photos" title={<span className="flex items-center gap-2"><span aria-hidden>🖼</span> Photo Gallery</span>}>
+        <Tab key="photos" title={<span className="flex items-center gap-2"><FiImage size={18} /> Photo Gallery</span>}>
           <div className="py-8">
             <div className="flex items-center justify-between mb-6">
               <h3 className="font-heading text-xl font-bold text-text-dark flex items-center gap-2">
                 <span className="w-8 h-1 bg-gold rounded" aria-hidden />
                 Latest Event Highlights
               </h3>
-              <button type="button" className="p-2 text-text-muted hover:text-gold rounded-lg" aria-label="Filter gallery">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
+              <button type="button" className="p-2 text-text-muted hover:text-gold rounded-lg min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Filter gallery">
+                <FiSliders size={22} />
               </button>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {placeholderImages.map(({ id, alt }) => (
-                <div key={id} className="relative aspect-[4/3] rounded-xl overflow-hidden bg-navy/10 group">
+                <div key={id} className="relative aspect-[4/3] rounded-xl overflow-hidden bg-primary/10 group">
                   <Image
                     src="/images/ra-logo.png"
                     alt={alt}
                     fill
                     className="object-contain p-6 group-hover:scale-105 transition-transform"
                   />
-                  <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/20 transition-colors" aria-hidden />
+                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors" aria-hidden />
                 </div>
               ))}
             </div>
           </div>
         </Tab>
-        <Tab key="downloads" title={<span className="flex items-center gap-2"><span aria-hidden>⬇</span> Downloads</span>}>
+        <Tab key="downloads" title={<span className="flex items-center gap-2"><FiDownload size={18} /> Downloads</span>}>
           <div className="py-8">
             <h3 className="font-heading text-xl font-bold text-text-dark flex items-center gap-2 mb-6">
               <span className="w-8 h-1 bg-gold rounded" aria-hidden />

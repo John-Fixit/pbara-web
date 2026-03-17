@@ -74,4 +74,13 @@ export const newsItems: NewsItem[] = [
     readTime: 2,
     slug: "leadership-workshop-2024",
   },
+  {
+    id: "9",
+    title: "Drill & Ceremonial Standards Update",
+    category: "Drill & Discipline",
+    date: "Jun 12, 2024",
+    excerpt: "Updated standards for drill and ceremonial parades across all chapters.",
+    readTime: 3,
+    slug: "drill-standards-2024",
+  },
 ];
