@@ -44,7 +44,7 @@ export function Navbar() {
           </span> */}
           <div className="flex flex-col">
             <h2 className="text-slate-100 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">
-              Pentecost RA
+              RA Pentecost
             </h2>
             <span className="text-[10px] uppercase tracking-widest text-accent-gold font-bold">
               Baptist Association

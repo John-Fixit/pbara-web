@@ -37,7 +37,8 @@ function badgeClasses(category: string): string {
 
 function metaIcon(category: string) {
   if (category === "Featured") return <FiCalendar size={16} aria-hidden />;
-  if (category === "Report") return <HiOutlineMegaphone size={16} aria-hidden />;
+  if (category === "Report")
+    return <HiOutlineMegaphone size={16} aria-hidden />;
   return <HiOutlineShieldCheck size={16} aria-hidden />;
 }
 
@@ -63,7 +64,8 @@ export function HomeSections({ executives, bulletins }: HomeSectionsProps) {
             </h2>
             <div className="w-24 h-1 bg-gold mx-auto" aria-hidden />
             <p className="text-text-muted font-medium">
-              Leadership dedicated to the spiritual and social development of youth.
+              Leadership dedicated to the spiritual and social development of
+              youth.
             </p>
           </div>
 
@@ -73,7 +75,7 @@ export function HomeSections({ executives, bulletins }: HomeSectionsProps) {
               return (
                 <div
                   key={exec.id}
-                  className="group text-center space-y-4 p-6 rounded-xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-200"
+                  className="group text-center space-y-4 p-6 rounded-xl bg-slate-50 hover:bg-slate-50 transition-colors border border-slate-100 order-transparent hover:border-slate-200"
                 >
                   <div className="size-48 mx-auto overflow-hidden rounded-full border-4 border-white shadow-lg bg-background">
                     <Image
@@ -81,11 +83,13 @@ export function HomeSections({ executives, bulletins }: HomeSectionsProps) {
                       src={imageSrc}
                       width={192}
                       height={192}
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                      className="w-full h-full object-cover grayscal group-hover:grayscale-0 transition-all duration-500"
                     />
                   </div>
                   <div>
-                    <h4 className="text-primary font-bold text-lg">{exec.name}</h4>
+                    <h4 className="text-primary font-bold text-lg">
+                      {exec.name}
+                    </h4>
                     <p className="text-primary text-sm font-bold uppercase tracking-wide">
                       {exec.position}
                     </p>
@@ -164,7 +168,11 @@ export function HomeSections({ executives, bulletins }: HomeSectionsProps) {
                   <div className="p-8 flex flex-col flex-1">
                     <div className="flex items-center gap-2 text-gold text-xs font-bold uppercase mb-3">
                       {metaIcon(item.category)}
-                      <span>{item.category === "Featured" ? item.date : item.category}</span>
+                      <span>
+                        {item.category === "Featured"
+                          ? item.date
+                          : item.category}
+                      </span>
                     </div>
 
                     <h3 className="text-primary text-xl font-black leading-tight mb-4 group-hover:text-gold transition-colors font-heading">

@@ -7,7 +7,7 @@ export interface Executive {
   name: string;
   position: string;
   church: string;
-  image?: string;
+  image?: string | null;
   bio?: string;
 }
 

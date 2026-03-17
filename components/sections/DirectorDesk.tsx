@@ -4,8 +4,7 @@ import { MdFormatQuote } from "react-icons/md";
 
 const directorName = "Coun. Ikechukwu Mgbeme, Oluwaseun";
 const directorTitle = "Association Director";
-const directorPortraitSrc =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuBYHy1kzTRTLDO8-nGJZd68f9Maj7CwjRWA5aJj503tQ5OvxqrSCJPAGF9U4uync_JNllrvgikxWps9GArzyNF-iQ26B8g_UpSR_H_5gSTEziElErEh7TxdfeDpbJ-r5aWV9McDnWejwr4VOfsT2JGYvQ57HWcnuD3GQibgFtqxnimvy9-2OEPysgDnyXfDuz3Mc5jwfe7kDV1DyZRF2nscl4rG5pZxp0XkCBChkGWnvKEPbBpO-h5rBo8kBMeL2MorqLjm6AZrw2M";
+const directorPortraitSrc = "/images/ik.png";
 
 /**
  * Full-width card: left — director photo placeholder + name overlay; right — quote marks, heading, message, read more link
@@ -22,7 +21,7 @@ export function DirectorDesk() {
             <img
               alt="Portrait of the Association Director"
               src={directorPortraitSrc}
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover bg-[#9bbec4]"
             />
 
             <div className="absolute bottom-6 left-6 z-20">
